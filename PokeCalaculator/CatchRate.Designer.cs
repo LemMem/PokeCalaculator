@@ -41,15 +41,18 @@
             this.StatG34 = new System.Windows.Forms.TextBox();
             this.calcG34 = new System.Windows.Forms.Button();
             this.G34 = new System.Windows.Forms.Panel();
-            this.descStatValG34 = new System.Windows.Forms.Label();
+            this.PokeballMultiplierG34 = new System.Windows.Forms.LinkLabel();
             this.descStatVal2G34 = new System.Windows.Forms.Label();
+            this.descStatValG34 = new System.Windows.Forms.Label();
             this.G34Label = new System.Windows.Forms.Label();
             this.resultText = new System.Windows.Forms.Label();
-            this.PokeballMultiplierG34 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.G2 = new System.Windows.Forms.Panel();
-            this.descLabelG2 = new System.Windows.Forms.Label();
+            this.G1 = new System.Windows.Forms.Panel();
+            this.descLabelG1 = new System.Windows.Forms.Label();
+            this.PokeballUsedLabelG1 = new System.Windows.Forms.Label();
+            this.MaxHP = new System.Windows.Forms.TextBox();
             this.G34.SuspendLayout();
+            this.G1.SuspendLayout();
             this.SuspendLayout();
             // 
             // descLabel
@@ -175,14 +178,16 @@
             this.G34.Size = new System.Drawing.Size(178, 292);
             this.G34.TabIndex = 14;
             // 
-            // descStatValG34
+            // PokeballMultiplierG34
             // 
-            this.descStatValG34.AutoSize = true;
-            this.descStatValG34.Location = new System.Drawing.Point(3, 228);
-            this.descStatValG34.Name = "descStatValG34";
-            this.descStatValG34.Size = new System.Drawing.Size(140, 13);
-            this.descStatValG34.TabIndex = 12;
-            this.descStatValG34.Text = "(2 for sleep, 1.5 for paralyze,";
+            this.PokeballMultiplierG34.AutoSize = true;
+            this.PokeballMultiplierG34.Location = new System.Drawing.Point(5, 150);
+            this.PokeballMultiplierG34.Name = "PokeballMultiplierG34";
+            this.PokeballMultiplierG34.Size = new System.Drawing.Size(102, 13);
+            this.PokeballMultiplierG34.TabIndex = 14;
+            this.PokeballMultiplierG34.TabStop = true;
+            this.PokeballMultiplierG34.Text = "Pokeball\'s Multiplier:";
+            this.PokeballMultiplierG34.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // descStatVal2G34
             // 
@@ -192,6 +197,15 @@
             this.descStatVal2G34.Size = new System.Drawing.Size(161, 13);
             this.descStatVal2G34.TabIndex = 13;
             this.descStatVal2G34.Text = "poison, or burn, and 1 otherwise)";
+            // 
+            // descStatValG34
+            // 
+            this.descStatValG34.AutoSize = true;
+            this.descStatValG34.Location = new System.Drawing.Point(3, 228);
+            this.descStatValG34.Name = "descStatValG34";
+            this.descStatValG34.Size = new System.Drawing.Size(140, 13);
+            this.descStatValG34.TabIndex = 12;
+            this.descStatValG34.Text = "(2 for sleep, 1.5 for paralyze,";
             // 
             // G34Label
             // 
@@ -205,21 +219,10 @@
             // resultText
             // 
             this.resultText.AutoSize = true;
-            this.resultText.Location = new System.Drawing.Point(18, 344);
+            this.resultText.Location = new System.Drawing.Point(20, 399);
             this.resultText.Name = "resultText";
             this.resultText.Size = new System.Drawing.Size(0, 13);
             this.resultText.TabIndex = 16;
-            // 
-            // PokeballMultiplierG34
-            // 
-            this.PokeballMultiplierG34.AutoSize = true;
-            this.PokeballMultiplierG34.Location = new System.Drawing.Point(5, 150);
-            this.PokeballMultiplierG34.Name = "PokeballMultiplierG34";
-            this.PokeballMultiplierG34.Size = new System.Drawing.Size(102, 13);
-            this.PokeballMultiplierG34.TabIndex = 14;
-            this.PokeballMultiplierG34.TabStop = true;
-            this.PokeballMultiplierG34.Text = "Pokeball\'s Multiplier:";
-            this.PokeballMultiplierG34.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // button1
             // 
@@ -231,22 +234,40 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // G2
+            // G1
             // 
-            this.G2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.G2.Location = new System.Drawing.Point(203, 65);
-            this.G2.Name = "G2";
-            this.G2.Size = new System.Drawing.Size(178, 292);
-            this.G2.TabIndex = 18;
+            this.G1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.G1.Controls.Add(this.MaxHP);
+            this.G1.Controls.Add(this.PokeballUsedLabelG1);
+            this.G1.Location = new System.Drawing.Point(203, 65);
+            this.G1.Name = "G1";
+            this.G1.Size = new System.Drawing.Size(178, 292);
+            this.G1.TabIndex = 18;
             // 
-            // descLabelG2
+            // descLabelG1
             // 
-            this.descLabelG2.AutoSize = true;
-            this.descLabelG2.Location = new System.Drawing.Point(203, 46);
-            this.descLabelG2.Name = "descLabelG2";
-            this.descLabelG2.Size = new System.Drawing.Size(39, 13);
-            this.descLabelG2.TabIndex = 19;
-            this.descLabelG2.Text = "Gen II:";
+            this.descLabelG1.AutoSize = true;
+            this.descLabelG1.Location = new System.Drawing.Point(203, 46);
+            this.descLabelG1.Name = "descLabelG1";
+            this.descLabelG1.Size = new System.Drawing.Size(36, 13);
+            this.descLabelG1.TabIndex = 19;
+            this.descLabelG1.Text = "Gen I:";
+            // 
+            // PokeballUsedLabelG1
+            // 
+            this.PokeballUsedLabelG1.AutoSize = true;
+            this.PokeballUsedLabelG1.Location = new System.Drawing.Point(3, 33);
+            this.PokeballUsedLabelG1.Name = "PokeballUsedLabelG1";
+            this.PokeballUsedLabelG1.Size = new System.Drawing.Size(77, 13);
+            this.PokeballUsedLabelG1.TabIndex = 0;
+            this.PokeballUsedLabelG1.Text = "Pokeball used:";
+            // 
+            // MaxHP
+            // 
+            this.MaxHP.Location = new System.Drawing.Point(6, 48);
+            this.MaxHP.Name = "MaxHP";
+            this.MaxHP.Size = new System.Drawing.Size(100, 20);
+            this.MaxHP.TabIndex = 1;
             // 
             // CatchRate
             // 
@@ -254,8 +275,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.descLabelG2);
-            this.Controls.Add(this.G2);
+            this.Controls.Add(this.descLabelG1);
+            this.Controls.Add(this.G1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.resultText);
             this.Controls.Add(this.G34Label);
@@ -266,6 +287,8 @@
             this.Text = "Opponents current hp:";
             this.G34.ResumeLayout(false);
             this.G34.PerformLayout();
+            this.G1.ResumeLayout(false);
+            this.G1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,7 +315,9 @@
         private System.Windows.Forms.Label resultText;
         private System.Windows.Forms.LinkLabel PokeballMultiplierG34;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel G2;
-        private System.Windows.Forms.Label descLabelG2;
+        private System.Windows.Forms.Panel G1;
+        private System.Windows.Forms.Label descLabelG1;
+        private System.Windows.Forms.TextBox MaxHP;
+        private System.Windows.Forms.Label PokeballUsedLabelG1;
     }
 }
